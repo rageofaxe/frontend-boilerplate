@@ -1,0 +1,111 @@
+.root {
+    height: 100%;
+    width: 260px;
+    flex: 0 0 260px;
+    display: flex;
+    flex-direction:column;
+}
+
+.item, .activeItem {
+  border-bottom: 1px solid #dedede;
+  border-right: 1px solid #dedede;
+  padding: 12px 16px;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.item:hover {
+  background: #f3f8fa;
+}
+
+.activeItem {
+  background: #f3f8fa;
+}
+
+.itemTitle {
+  font-size: 18px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4a4a4a;
+}
+
+.itemCulture {
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #808080;
+}
+
+.itemData {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.itemDataSquare {
+  font-size: 15px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4a4a4a;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.image {
+  margin-right: 8px;
+  max-width: 48px;
+  max-height: 48px;
+}
+
+.itemDataWeether {
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: #bbbbbb;
+}
+
+.addField {
+  background-color: #54f2c3;
+  font-size: 18px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  justify-content: center;
+  padding: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.addField img {
+  margin-right: 12px;
+}
+
+/*::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-right: 1px solid #bbb;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bbb;
+}*/

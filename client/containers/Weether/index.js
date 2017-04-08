@@ -4,18 +4,31 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Menu from '../../components/Menu'
 
-class App extends Component {
+class Fields extends Component {
   render() {
     const { todos, actions, children } = this.props
     return (
       <div>
-        <Menu />
+	     <Menu />
+        weether
       </div>
     )
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    todos: state.todos
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    // actions: bindActionCreators(TodoActions, dispatch)
+  }
+}
+
 export default connect(
-  null,
-  null
-)(App)
+  mapStateToProps,
+  mapDispatchToProps
+)(Fields)

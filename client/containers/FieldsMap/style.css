@@ -1,0 +1,81 @@
+.root {
+  height: 100%;
+}
+
+.center {
+  top: calc(50% - 80px);
+}
+
+.footer {
+  z-index: 9999;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.footerToolbar {
+  display: flex;
+}
+
+.dates {
+  cursor: pointer;
+  background: #f8f8f8;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  display: flex;
+}
+
+.datesTitle {
+  color: #4a4a4a;
+  flex: 0 0 128px;
+}
+
+.footerToolbarInfo {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.13;
+  letter-spacing: normal;
+  color: #b3b3b3;
+  padding: 12px;
+}
+
+.footerToolbarButton {
+  display: flex;
+  font-size: 21px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.24;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  background-color: #54f2c3;
+  padding: 16px;
+  flex: 1;
+  justify-content: center;
+}
+
+.datesValues {
+  color: #b3b3b3;
+}
+
+.datesValue {
+  margin-right: 12px;
+}
+
+.control {
+
+}

@@ -1,9 +1,15 @@
 
 import { routerReducer as routing } from 'react-router-redux'
 import { combineReducers } from 'redux'
-import todos from './todos'
+import fields from './fields'
+import geometry from './geometry'
+import report from './report'
+import settings from './settings'
 
 export default combineReducers({
   routing,
-  todos
+  fields,
+  report,
+  geometry,
+  settings,
 })

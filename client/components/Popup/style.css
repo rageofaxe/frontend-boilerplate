@@ -1,0 +1,57 @@
+.overlay, .overlayOff {
+  background-color: rgba(216, 216, 216, 0.7);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.overlay {
+  animation: fadeIn 0.3s;
+}
+
+.overlayOff {
+  animation: fadeOut 0.3s;
+}
+
+.content, .contentOff {
+  border-radius: 2px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+  padding: 24px;
+  animation: slideUp 0.3s;
+  position: absolute;
+  bottom: 0;
+  right: 15%;
+  left: 15%;
+}
+
+.contentOff {
+  animation: slideDown 0.3s;
+}
+
+@keyframes slideUp {
+  from { bottom: -100px; position: absolute;}
+  to   { bottom: 0; position: absolute;}
+}
+
+@keyframes slideDown {
+  from { bottom: 0; position: absolute;}
+  to   { bottom: -100px; position: absolute;}
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}

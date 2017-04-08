@@ -13,6 +13,8 @@ module.exports = {
       'react-redux',
       'react-router',
       'react-router-redux',
+      'react-leaflet',
+      'leaflet',
       'redux'
     ]
   },

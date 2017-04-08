@@ -1,0 +1,59 @@
+.root {
+  display: flex;
+  flex: 1;
+  padding: 34px 40px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #4a4a4a;
+  padding-bottom: 17px;
+}
+
+.dataRow {
+  flex-direction: row;
+  display: flex;
+  width: 300px;
+  padding-top: 17px;
+  align-items: center;
+}
+
+.dataKey {
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.4;
+  letter-spacing: normal;
+  color: #bfbfbf;
+  flex: 1;
+}
+
+.dataValue {
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2;
+  letter-spacing: normal;
+  color: #4a4a4a;
+  flex: 1;
+}
+
+.footer {
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #bfbfbf;
+  padding-bottom: 24px;
+}

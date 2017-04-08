@@ -2,7 +2,53 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Boilerplate</title>
+    <title>Onesoil</title>
+    <style>
+      * {
+        font-family: Proxima Nova, Helvetica;
+      }
+
+      body {margin: 0}
+
+      .leaflet-container {
+          height: 400px;
+          width: 100%;
+      }
+
+      .leaflet-bottom {
+        bottom: 150px !important;
+      }
+
+      .leaflet-top {
+        top: 100px !important;
+      }
+
+      .leaflet-popup-content-wrapper {
+        border-radius: 0 !important;
+      }
+
+      .leaflet-popup-tip-container {
+        display: none;
+      }
+
+      .leaflet-touch .leaflet-control-layers-toggle {
+        display: none !important;
+      }
+
+      .leaflet-control-layers-expanded,
+      .leaflet-control-layers-list {
+        display: block !important;
+      }
+
+      .leaflet-control-layers.leaflet-control {
+        padding: 6px 10px 6px 6px !important;
+      }
+
+    </style>
+    <link rel="stylesheet" type="text/css" href="http://static2.relax.by/common/css/fonts.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+
+
   </head>
   <body>
     <div id="root"></div>

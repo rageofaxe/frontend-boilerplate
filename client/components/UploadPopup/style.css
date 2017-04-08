@@ -1,0 +1,53 @@
+.root {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: center;
+  color: #4a4a4a;
+  margin-top: 24px;
+}
+
+.dragAndDrop {
+  margin-top: 36px;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #b3b3b3;
+  width: 300px;
+  align-self: center;
+}
+
+.uploadFileButton {
+  margin-top: 36px;
+  cursor: pointer;
+  width: 200px;
+  border-radius: 4px;
+  background-color: #54f2c3;
+  font-size: 21px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.24;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  padding: 14px 20px;
+  align-self: center;
+}
+
+.icon {
+  margin-bottom: 12px;
+}
