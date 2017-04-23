@@ -5,11 +5,13 @@ import R from 'ramda'
 
 const initialState = {
   currentMapView: [types.MAP_VIEW_ALL_FIELDS],
-  currentFertilizers: types.FERTILIZERS_NITRIC
+  currentFertilizers: types.FERTILIZERS_NITRIC,
+  isOpenedSectorsPopup: false,
 }
 
 const lensMapView = R.lensProp('currentMapView')
 const lensFertilizers = R.lensProp('currentFertilizers')
+const isOpenedSectorsPopup = R.lensProp('isOpenedSectorsPopup')
 
 export default handleActions({
   [types.SELECT_FIELD] (state) {
@@ -26,6 +28,10 @@ export default handleActions({
 
   [types.CLICK_FERTILIZERS] (state, {payload}) {
     return R.set(lensFertilizers, payload, state)
+  },
+
+  [types.DOUBLE_POPUP] (state, {payload}) {
+    return R.set(isOpenedSectorsPopup, payload, state)
   },
 
 }, initialState)

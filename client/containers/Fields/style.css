@@ -63,7 +63,7 @@
 }
 
 .scrollBar {
-  height: calc(100vh - 210px);
+  height: calc(100vh - 110px);
   overflow: auto;
 }
 

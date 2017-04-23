@@ -1,4 +1,3 @@
-
 import { handleActions } from 'redux-actions'
 import * as types from '../constants'
 import R from 'ramda'
@@ -10,6 +9,8 @@ const initialState = {
   currentWMS: {},
   features: [],
   allFields: ['init'],
+
+  mapSectors: [],
 }
 
 const currentWMSLens = R.lensProp('currentWMS')
@@ -24,7 +25,6 @@ export default handleActions({
   },
 
   [types.GET_ALL_FIELDS] (state, {payload}) {
-    // return R.set(R.lensPath('all', payload.geometry.features, state))
     return Object.assign({}, state, {
       allFields: payload.geometry.features,
       allFieldsCentroid: payload.centroid,
@@ -32,17 +32,28 @@ export default handleActions({
   },
 
   [types.GET_LAYERS] (state, {payload}) {
-    // return R.set(
-    //   R.lensProp('currentWMS'),
-    //   R.last(payload.rows) || {},
-    //   R.merge(state, payload.rows)
-    // )
     return Object.assign({}, state, {
       rows: payload.rows,
-    });
+      currentWMS: R.last(payload.rows),
+    })
   },
 
   [types.GET_SECTORS] (state, {payload}) {
-    return R.set(R.lensProp('features'), payload.features, state);
+    return R.set(R.lensProp('features'), payload.features, state)
+  },
+
+  [types.SET_SECTOR] (state, {payload}) {
+    console.log('SECTORS', state.mapSectors)
+    const index = R.findIndex(item => {
+      return item.sectorId === payload.sectorId && item.fertilizerId === payload.fertilizerId
+    }, state.mapSectors)
+    if(index > -1) {
+      return Object.assign({}, state, {
+        mapSectors: R.set(R.lensIndex(index), payload, state.mapSectors)
+      })
+    }
+    return Object.assign({}, state, {
+      mapSectors: R.append(payload, state.mapSectors)
+    })
   },
 }, initialState)

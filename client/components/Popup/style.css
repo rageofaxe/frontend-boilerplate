@@ -30,6 +30,7 @@
   bottom: 0;
   right: 15%;
   left: 15%;
+  max-width: 900px;
 }
 
 .contentOff {

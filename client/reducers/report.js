@@ -1,9 +1,9 @@
-
+import R from 'ramda'
 import { handleActions } from 'redux-actions'
 import * as types from '../constants'
 
 const initialState = {
-  id: 4,
+  id: 0,
 }
 
 export default handleActions({

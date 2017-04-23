@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
 import * as constants from '../../constants'
+import $ from 'jquery'
 import style from './popup.css'
 
 export default class Popup extends Component {
   render() {
-    const isNitric = () => this.props.currentFertilizers === constants.FERTILIZERS_NITRIC
-    console.log('popup', this.props.data)
+    const fertelizerTitle =
+      this.props.fertilizerId === 1 ? 'Фосфора' :
+      this.props.fertilizerId === 2 ? 'Азота' : 'Калия'
+    console.log('>>>', this.props.popup)
     return (
       <div >
         <div className={style.title}>
-          {isNitric() ? 'Норма азота' : 'Норма фосфора и калия'}
+          Норма {fertelizerTitle}
         </div>
         <div className={style.control}>
           <div
@@ -24,7 +27,17 @@ export default class Popup extends Component {
             />
             <div className={style.dim}>кг/га</div>
           </div>
-          <div className={style.button}>
+          <div
+            className={style.button}
+            onClick={() => {
+
+              this.props.setSector({
+                sectorId: this.props.data.id,
+                fertilizerId: this.props.fertilizerId,
+                value: this.input.value
+              })
+            }}
+          >
             Сохранить
           </div>
         </div>

@@ -30,7 +30,6 @@ class Popup extends Component {
     return (
       <Portal
         closeOnEsc
-        closeOnOutsideClick
         onClose={this.handleClose}
         isOpened={this.state.isOpen}
         onOpen={this.handleOpen}

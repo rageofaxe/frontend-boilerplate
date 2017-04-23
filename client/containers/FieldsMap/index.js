@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import {
   isEmpty,
+  isUndefined,
   flatten,
   addIndex,
   partition,
@@ -14,18 +15,12 @@ import {
  } from 'ramda'
 
 import {
-  Circle,
   FeatureGroup,
-  LayerGroup,
   LayersControl,
   Map,
-  Marker,
   Popup,
-  Rectangle,
   TileLayer,
   ZoomControl,
-  Polygon,
-  Tooltip,
   GeoJSON,
   WMSTileLayer,
 } from 'react-leaflet'
@@ -44,14 +39,12 @@ class FieldsMap extends Component {
     isNDVI: true,
   }
 
-  componentWillUpdate() {
+  componentDidUpdate() {
     this.state.currentWMS = this.props.geometry.currentWMS
   }
 
   setWMS = currentWMS => {
-    // this.props.actions.setNDVI()
-    // this.setState({currentWMS, isNDVI: true})
-    this.forceUpdate()
+    this.setState({currentWMS, isNDVI: true})
   }
 
   render() {
@@ -61,16 +54,15 @@ class FieldsMap extends Component {
     const layers = geometry.rows
     const currentWMS = this.state.currentWMS || this.props.geometry.currentWMS
 
-    console.log('>>>', currentWMS)
-
     const isAllFields = () =>
        contains(constants.MAP_VIEW_ALL_FIELDS, settings.currentMapView)
 
     const isFieldBorder = () =>
       contains(constants.MAP_VIEW_FIELD, settings.currentMapView)
 
-    const isFieldNDVI = () => this.state.isNDVI
-      contains(constants.MAP_VIEW_NDVI, settings.currentMapView)
+    const isFieldNDVI = () =>
+      // contains(constants.MAP_VIEW_FIELD, settings.currentMapView)
+      constants.MAP_VIEW_FIELD === settings.currentMapView
 
     const isFieldSectors = () =>
       contains(constants.MAP_VIEW_SECTORS, settings.currentMapView)
@@ -81,7 +73,7 @@ class FieldsMap extends Component {
       return null
     }
 
-    console.log('currentWMS', currentWMS)
+    console.log('currentWMS', currentWMS, this.state.currentWMS)
 
     const pair = pipe(
       flatten,
@@ -114,14 +106,6 @@ class FieldsMap extends Component {
                   {item.date}
                 </span>
               )}
-            </div>
-          </div>
-          <div className={style.footerToolbar}>
-            <div className={style.footerToolbarInfo}>
-              Файл в формате ZIP для бортовых компьютеров JohnDeere, Trimble, Teejet
-            </div>
-            <div className={style.footerToolbarButton}>
-              Скачать карту для дифвнесения (N)
             </div>
           </div>
         </div>
@@ -163,21 +147,6 @@ class FieldsMap extends Component {
                     currentFertilizers={settings.currentFertilizers}
                   />
                 </Popup>
-              </GeoJSON>)}
-            </FeatureGroup>
-          </Overlay>
-
-          <Overlay
-            name='Все поля'
-            key={`all${this.state.key}`}
-            checked={isAllFields()}
-          >
-            <FeatureGroup>
-              {this.props.geometry.allFields.map((item, index) => <GeoJSON
-                data={item.geometry}
-                style={{fillOpacity: 0, weight: 1, color: 'red'}}
-                key={`${index}all${this.state.key}`}
-              >
               </GeoJSON>)}
             </FeatureGroup>
           </Overlay>

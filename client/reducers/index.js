@@ -5,6 +5,7 @@ import fields from './fields'
 import geometry from './geometry'
 import report from './report'
 import settings from './settings'
+import worksHistory from './worksHistory'
 
 export default combineReducers({
   routing,
@@ -12,4 +13,5 @@ export default combineReducers({
   report,
   geometry,
   settings,
+  worksHistory,
 })

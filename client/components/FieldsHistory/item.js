@@ -7,10 +7,10 @@ class Item extends Component {
     return (
       <div className={style.item}>
         <div className={style.itemHeader}>
-          <div className={style.itemTitle}>Title</div>
+          <div className={style.itemTitle}>{this.props.data.type}</div>
           <div className={style.itemSquare}>25ga</div>
         </div>
-        <div className={style.itemDateTime}>12 апреля, 12.05</div>
+        <div className={style.itemDateTime}>{this.props.data.start}</div>
         
       </div>
     )

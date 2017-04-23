@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import ReactDOM from 'react-dom'
 import React from 'react'
 
-import App from './containers/App'
+import AllFields from './containers/AllFields'
 import Fields from './containers/Fields'
 import Works from './containers/Works'
 import Stores from './containers/Stores'
@@ -20,8 +20,10 @@ const history = syncHistoryWithStore(browserHistory, store)
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={App}></Route>
-      <Route path="/fields" component={Fields}></Route>
+      <Route path="/" component={AllFields}></Route>
+      <Route path="/fields" component={AllFields}></Route>
+      <Route path="/fields/:id" component={Fields}></Route>
+
       <Route path="/fields/work/doing" component={Fields}></Route>
       <Route path="/fields/work/history" component={Fields}></Route>
 
